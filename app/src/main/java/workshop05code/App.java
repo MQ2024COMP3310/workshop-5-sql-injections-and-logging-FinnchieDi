@@ -57,17 +57,20 @@ public class App {
             int i = 1;
             while ((line = br.readLine()) != null) {
                 if (line.matches("^[a-z]{4}$")){
-                    System.out.println(line);
                     wordleDatabaseConnection.addValidWord(i, line);
+                    String msg = String.format("New word " + line + " has been imported to db");
+                    logger.log(Level.INFO, msg);
                     i++;
                 }else{
-                    String msg = String.format("Attempt to import %s to db is invalid");
+                    String msg = String.format("Attempt to import " + line + " to db failed");
                     logger.log(Level.SEVERE, msg);
                 }
             }
         } catch (IOException e) {
-            System.out.println("Not able to load . Sorry!");
-            System.out.println(e.getMessage());
+            // System.out.println("Not able to load . Sorry!");
+            // System.out.println(e.getMessage());
+            String msg = String.format("Not able to load "+ e.getMessage() + " Sorry!");
+            logger.log(Level.WARNING, msg);
             return;
         }
 
