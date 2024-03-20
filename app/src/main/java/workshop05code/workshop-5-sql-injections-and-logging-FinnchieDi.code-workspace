@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "../../../../.."
+		},
+		{
+			"name": "[MQ2024COMP3310/workshop-5-sql-injections-and-logging-FinnchieDi source archive]",
+			"uri": "codeql-zip-archive://1-130/c:\\Users\\finni\\AppData\\Roaming\\Code\\User\\workspaceStorage\\75c3ae644f91f5921492c2ee51778e82\\GitHub.vscode-codeql\\java\\java\\src.zip"
+		}
+	],
+	"settings": {
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}

@@ -288,7 +288,6 @@ news
 next
 nice
 nick
-nickel
 nine
 none
 nose
