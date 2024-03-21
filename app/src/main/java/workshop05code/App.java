@@ -16,6 +16,9 @@ import java.util.logging.Logger;
  * @author sqlitetutorial.net
  */
 public class App {
+    private static final Logger logger = Logger.getLogger(App.class.getName());
+    // End code for logging exercise
+
     // Start code for logging exercise
     static {
         // must set before the Logger
@@ -23,12 +26,12 @@ public class App {
         try {// resources\logging.properties
             LogManager.getLogManager().readConfiguration(new FileInputStream("resources/logging.properties"));
         } catch (SecurityException | IOException e1) {
+            logger.log(Level.WARNING, "Security Exception or IOException", e1);
             e1.printStackTrace();
         }
     }
 
-    private static final Logger logger = Logger.getLogger(App.class.getName());
-    // End code for logging exercise
+
     
     /**
      * @param args the command line arguments
@@ -69,8 +72,7 @@ public class App {
         } catch (IOException e) {
             // System.out.println("Not able to load . Sorry!");
             // System.out.println(e.getMessage());
-            String msg = String.format("Not able to load "+ e.getMessage() + " Sorry!");
-            logger.log(Level.WARNING, msg);
+            logger.log(Level.WARNING, "Not able to load . Sorry!", e);
             return;
         }
 
@@ -97,6 +99,7 @@ public class App {
                 guess = scanner.nextLine();
             }
         } catch (NoSuchElementException | IllegalStateException e) {
+            logger.log(Level.WARNING, "No Such Element Exception or Illegal State Exception", e);
             e.printStackTrace();
         }
 
